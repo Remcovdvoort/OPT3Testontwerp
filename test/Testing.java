@@ -41,4 +41,16 @@ public class Testing {
         assertEquals("Goed", new Cijfer(cijfer8).getBeoordeling());
         assertEquals("Goed", new Cijfer(cijfer9).getBeoordeling());
     }
+
+    @Test
+    public void PairwiseTest() {
+        Double cijfer = 6.0;
+
+        assertEquals(1.0, Cijfer.bepaalCijfer(cijfer, -2, true, true, true));
+        assertEquals(cijfer-0.5, Cijfer.bepaalCijfer(cijfer, -2, false, false, false));
+        assertEquals(1.0, Cijfer.bepaalCijfer(cijfer, 2, true, false, false));
+        assertEquals(cijfer+1, Cijfer.bepaalCijfer(cijfer, 2, false, true, true));
+        assertEquals(1.0, Cijfer.bepaalCijfer(cijfer, 3, true, false, true));
+        assertEquals(1.0, Cijfer.bepaalCijfer(cijfer, 3, false, true, false));
+    }
 }

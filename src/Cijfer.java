@@ -16,4 +16,26 @@ public class Cijfer {
         }
         return "Foutief cijfer ingevoerd";
     }
+
+    public static double bepaalCijfer(double cijfer, Integer dagenTelaat, boolean plagiaat, boolean bonusOpdracht, boolean githubInvite){
+
+        if(dagenTelaat >2){
+            return 1.0;
+        }
+        else if(dagenTelaat>0 && dagenTelaat<=2){
+            cijfer-=2;
+        }
+        if(plagiaat){
+            return 1.0;
+        }
+        if(bonusOpdracht){
+            cijfer+=2;
+        }
+        if(githubInvite){
+            cijfer+=1;
+        }else{
+            cijfer-=0.5;
+        }
+        return cijfer;
+    }
 }
